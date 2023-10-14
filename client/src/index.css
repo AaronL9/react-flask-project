@@ -1,0 +1,161 @@
+/* google font */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+}
+/* ============== LAYOUT ================ */
+:root {
+  --primary: #7257fa;
+  --error: #e7195a;
+}
+body {
+  background: #e8e8e8;
+  margin: 0;
+  font-family: "Poppins";
+}
+header {
+  background: #fff;
+  padding: 1.5rem;
+}
+header .container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header ul {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+header ul li i {
+  margin-left: 2rem;
+  cursor: pointer;
+}
+
+header a {
+  color: #333;
+  text-decoration: none;
+}
+
+header a.active {
+  background-color: var(--primary);
+  padding: 0.5rem;
+  border-radius: 5px;
+  color: white;
+}
+
+main {
+  padding: 2rem;
+}
+
+.home {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.home h2 {
+  font-weight: 800;
+  margin-bottom: 2rem;
+}
+
+.home .notes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+}
+
+/* ===================  NAVBAR ================== */
+nav {
+  display: flex;
+  align-items: center;
+}
+nav a {
+  margin-left: 10px;
+}
+nav button {
+  background: #fff;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-family: "Poppins";
+  cursor: pointer;
+  font-size: 1em;
+  margin-left: 10px;
+}
+
+/* =================== CREATE ===================== */
+.create-note {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* LOGIN AND SIGNUP PAGE CSS */
+.error {
+  display: flex;
+  gap: 0.5rem;
+  color: #ff3333;
+  align-items: center;
+  font-size: 15px;
+}
+.loader-background {
+  background-color: rgba(0, 0, 0, 0.53);
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.loader {
+  width: 44.8px;
+  height: 44.8px;
+  color: #9b93f0;
+  position: relative;
+  background: radial-gradient(11.2px,currentColor 94%,#0000);
+}
+
+.loader:before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(10.08px at bottom right,#0000 94%,currentColor) top    left,
+          radial-gradient(10.08px at bottom left ,#0000 94%,currentColor) top    right,
+          radial-gradient(10.08px at top    right,#0000 94%,currentColor) bottom left,
+          radial-gradient(10.08px at top    left ,#0000 94%,currentColor) bottom right;
+  background-size: 22.4px 22.4px;
+  background-repeat: no-repeat;
+  animation: loader 1.5s infinite cubic-bezier(0.3,1,0,1);
+}
+
+@keyframes loader {
+  33% {
+    inset: -11.2px;
+    transform: rotate(0deg);
+  }
+
+  66% {
+    inset: -11.2px;
+    transform: rotate(90deg);
+  }
+
+  100% {
+    inset: 0;
+    transform: rotate(90deg);
+  }
+}

@@ -18,7 +18,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 SERVER_PASSWORD = os.getenv('SERVER_PASSWORD')
 app.config['SECRET_KEY'] = SECRET_KEY
 
-# Databse configuration                                  Username:password@hostname/databasename
+# Databse configuration                                  
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:{}@localhost/flaskreact'.format(
     SERVER_PASSWORD)
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
@@ -100,7 +100,6 @@ def refresh_expiring_jwts(response):
                 response.data = json.dumps(data)
         return response
     except (RuntimeError, KeyError):
-        # Case where there is not a valid JWT. Just return the original respone
         return response
 
 
@@ -166,7 +165,6 @@ def add_note():
     db.session.add(notes)
     db.session.commit()
     return note_schema.jsonify(notes)
-
 
 if __name__ == '__main__':
     app.run(debug=True)

@@ -33,7 +33,7 @@ export default function SignUpForm() {
             <div className="input-box">
               <i className="fas fa-envelope" />
               <input
-                type="text"
+                type="email"
                 placeholder="Enter your email"
                 required={true}
                 onChange={(e) => setEmail(e.target.value)}
